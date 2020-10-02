@@ -199,3 +199,4 @@ supported. Adding media may also work, but may not be persistent.
 * **Browser** &ndash; Use browser for external links
 * **Dark theme** &ndash; Use dark theme for editing
 * **About** &ndash; Show app version, licence and credits
+# Note-App
