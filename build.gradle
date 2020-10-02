@@ -1,0 +1,54 @@
+buildscript {
+    repositories {
+        jcenter()
+        google()
+    }
+
+    dependencies {
+        classpath 'com.android.tools.build:gradle:4.0.1'
+    }
+}
+
+allprojects {
+    repositories {
+        jcenter()
+        google()
+        maven { url "https://jitpack.io" }
+    }
+
+    // tasks.withType(JavaCompile) {
+    //     options.deprecation = true
+    // }
+}
+
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 28
+    buildToolsVersion '30.0.2'
+
+    defaultConfig {
+        applicationId "org.billthefarmer.notes"
+        minSdkVersion 14
+        targetSdkVersion 28
+        versionName "1.07"
+        versionCode 107
+
+        buildConfigField "long", "BUILT", System.currentTimeMillis() + "L"
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    lintOptions {
+        disable 'IconDensities', 'ContentDescription', 'SetJavaScriptEnabled',
+            'UnusedAttribute', 'OldTargetApi'
+        // abortOnError false
+    }
+}
+
+dependencies {
+    implementation 'com.github.billthefarmer:MarkdownView:v1.04'
+}
